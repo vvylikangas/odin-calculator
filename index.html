@@ -7,29 +7,31 @@
     <title>Calculator</title>
   </head>
   <body>
-    <div>123</div>
-    <div>+</div>
-    <div>123</div>
-    <div>=</div>
-    <div>246</div>
-    <div>
-      <button>0</button>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>+</button>
-      <button>-</button>
-      <button>*</button>
-      <button>/</button>
-      <button>=</button>
+    <div id="firstNum">123</div>
+    <div id="operator">+</div>
+    <div id="secondNum">123</div>
+    <div id="equals">=</div>
+    <div id="result">246</div>
+    <div id="numpad">
+      <button class="num-btn" data-value="0">0</button>
+      <button class="num-btn" data-value="1">1</button>
+      <button class="num-btn" data-value="2">2</button>
+      <button class="num-btn" data-value="3">3</button>
+      <button class="num-btn" data-value="4">4</button>
+      <button class="num-btn" data-value="5">5</button>
+      <button class="num-btn" data-value="6">6</button>
+      <button class="num-btn" data-value="7">7</button>
+      <button class="num-btn" data-value="8">8</button>
+      <button class="num-btn" data-value="9">9</button>
     </div>
-    <button>clear</button>
+    <div id="operators">
+      <button class="operator-btn" data-value="+">+</button>
+      <button class="operator-btn" data-value="-">-</button>
+      <button class="operator-btn" data-value="*">*</button>
+      <button class="operator-btn" data-value="/">/</button>
+    </div>
+    <button class="calculate-btn">=</button>
+    <button id="clear">clear</button>
     <script src="./index.js"></script>
   </body>
 </html>
