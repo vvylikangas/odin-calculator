@@ -6,11 +6,12 @@ let isSecondOperator = false;
 const numpadContainer = document.getElementById('numpad');
 const operatorsContainer = document.getElementById('operators');
 const equalsButton = document.getElementById('equals-btn');
-const clearButton = document.getElementById('clear');
-const operatorElement = document.getElementById('operator');
-const operand1Element = document.getElementById('firstNum');
-const operand2Element = document.getElementById('secondNum');
-const resultElement = document.getElementById('result');
+const clearButton = document.getElementById('clear-btn');
+// const operatorElement = document.getElementById('operator');
+// const operand1Element = document.getElementById('firstNum');
+// const operand2Element = document.getElementById('secondNum');
+// const resultElement = document.getElementById('result');
+const displayElement = document.getElementById('operation-display');
 
 const operations = {
   add: (x, y) => x + y,
@@ -27,36 +28,37 @@ numpadContainer.addEventListener('click', (event) => {
   if (event.target.tagName === 'BUTTON') {
     const num = event.target.dataset.value;
     if (!isSecondOperator) {
-      operand1Element.textContent += num;
-      num1 = Number(operand1Element.textContent);
+      displayElement.textContent += num;
+      num1 = Number(displayElement.textContent);
     } else {
-      operand2Element.textContent += num;
-      num2 = Number(operand2Element.textContent);
+      displayElement.textContent += num;
+      num2 = Number(displayElement.textContent);
     }
   }
 });
 
 operatorsContainer.addEventListener('click', (event) => {
   if (event.target.tagName === 'BUTTON') {
-    operatorElement.textContent = event.target.innerText;
     operator = event.target.dataset.value;
+    displayElement.innerText = '';
     isSecondOperator = true;
   }
 });
 
 equalsButton.addEventListener('click', (event) => {
   const result = operate(operator, num1, num2);
-  resultElement.textContent = result;
+  displayElement.textContent = result;
+  num1 = result;
 });
 
 clearButton.addEventListener('click', (event) => {
-  operand1Element.textContent = '';
+  displayElement.textContent = '';
   num1 = 0;
-  operand2Element.textContent = '';
+  // operand2Element.textContent = '';
   num2 = 0;
-  resultElement.textContent = '';
+  // resultElement.textContent = '';
   result = 0;
-  operatorElement.textContent = '';
+  // operatorElement.textContent = '';
   operator = '';
   isSecondOperator = false;
 });

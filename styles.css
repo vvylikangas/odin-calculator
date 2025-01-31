@@ -1,0 +1,71 @@
+.container {
+  max-width: 410px;
+  justify-self: center;
+}
+
+#operation-display {
+  display: flex;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px 5px 0 0;
+  background-color: rgb(228, 104, 32);
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 80px;
+  justify-content: end;
+}
+
+#numpad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  gap: 5px; /* Optional: Adjusts spacing between buttons */
+  width: 400px; /* Adjusts to the content width */
+  height: 300px;
+  padding: 10px 5px;
+  background-color: rgb(63, 63, 63);
+}
+
+#numpad #zero {
+  grid-column: 2 / 3;
+}
+
+.num-btn {
+  font-size: 35px;
+  border-radius: 5%;
+}
+
+#operators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates 3 equal columns */
+  gap: 5px; /* Optional: Adjusts spacing between buttons */
+  width: 400px; /* Adjusts to the content width */
+  height: 80px;
+  padding: 5px 5px;
+  background-color: rgb(63, 63, 63);
+}
+
+.operator-btn {
+  font-size: 35px;
+  border-radius: 5%;
+}
+
+#functions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Creates 3 equal columns */
+  gap: 5px; /* Optional: Adjusts spacing between buttons */
+  width: 400px; /* Adjusts to the content width */
+  height: 80px;
+  padding: 5px 5px;
+  background-color: rgb(63, 63, 63);
+}
+
+#equals-btn {
+  font-size: 35px;
+  border-radius: 5%;
+}
+#clear-btn {
+  font-size: 35px;
+  border-radius: 5%;
+}
