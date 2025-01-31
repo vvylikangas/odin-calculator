@@ -1,6 +1,13 @@
+body {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+}
+
 .container {
-  max-width: 410px;
-  justify-self: center;
+  max-width: 420px;
 }
 
 #operation-display {
@@ -23,7 +30,7 @@
   gap: 5px; /* Optional: Adjusts spacing between buttons */
   width: 400px; /* Adjusts to the content width */
   height: 300px;
-  padding: 10px 5px;
+  padding: 10px 10px;
   background-color: rgb(63, 63, 63);
 }
 
@@ -42,7 +49,7 @@
   gap: 5px; /* Optional: Adjusts spacing between buttons */
   width: 400px; /* Adjusts to the content width */
   height: 80px;
-  padding: 5px 5px;
+  padding: 5px 10px;
   background-color: rgb(63, 63, 63);
 }
 
@@ -57,7 +64,7 @@
   gap: 5px; /* Optional: Adjusts spacing between buttons */
   width: 400px; /* Adjusts to the content width */
   height: 80px;
-  padding: 5px 5px;
+  padding: 10px 10px;
   background-color: rgb(63, 63, 63);
 }
 
