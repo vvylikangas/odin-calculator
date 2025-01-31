@@ -1,3 +1,17 @@
+let num1;
+let num2;
+let operator;
+let isSecondOperator = false;
+
+const numpadContainer = document.getElementById('numpad');
+const operatorsContainer = document.getElementById('operators');
+const equalsButton = document.getElementById('equals-btn');
+const clearButton = document.getElementById('clear');
+const operatorElement = document.getElementById('operator');
+const operand1Element = document.getElementById('firstNum');
+const operand2Element = document.getElementById('secondNum');
+const resultElement = document.getElementById('result');
+
 const operations = {
   add: (x, y) => x + y,
   subtract: (x, y) => x - y,
@@ -5,34 +19,44 @@ const operations = {
   divide: (x, y) => (y != 0 ? x / y : 'Error: division by zero'),
 };
 
-let num1;
-let num2;
-const numpad = document.getElementById('numpad');
-const operators = document.getElementById('operators');
-const operator = document.getElementById('operator');
-const operand1 = document.getElementById('firstNum');
-const operand2 = document.getElementById('secondNum');
-let isSecondOperator = false;
-
 const operate = (operator, x, y) => {
   return operations[operator] ? operations[operator](x, y) : 'Invalid operator';
 };
 
-numpad.addEventListener('click', (event) => {
+numpadContainer.addEventListener('click', (event) => {
   if (event.target.tagName === 'BUTTON') {
     const num = event.target.dataset.value;
     if (!isSecondOperator) {
-      operand1.textContent += num;
-      num1 = Number(operand1.textContent);
+      operand1Element.textContent += num;
+      num1 = Number(operand1Element.textContent);
     } else {
-      operand2.textContent += num;
-      num2 = Number(operand2.textContent);
+      operand2Element.textContent += num;
+      num2 = Number(operand2Element.textContent);
     }
   }
 });
-operators.addEventListener('click', (event) => {
+
+operatorsContainer.addEventListener('click', (event) => {
   if (event.target.tagName === 'BUTTON') {
-    operator.textContent = event.target.dataset.value;
+    operatorElement.textContent = event.target.innerText;
+    operator = event.target.dataset.value;
     isSecondOperator = true;
   }
+});
+
+equalsButton.addEventListener('click', (event) => {
+  const result = operate(operator, num1, num2);
+  resultElement.textContent = result;
+});
+
+clearButton.addEventListener('click', (event) => {
+  operand1Element.textContent = '';
+  num1 = 0;
+  operand2Element.textContent = '';
+  num2 = 0;
+  resultElement.textContent = '';
+  result = 0;
+  operatorElement.textContent = '';
+  operator = '';
+  isSecondOperator = false;
 });
